@@ -1,0 +1,163 @@
+body {
+  background: radial-gradient(circle at top, #0d0d0d, #000);
+  overflow: hidden;
+}
+
+/* ================= LAMP ================= */
+.lamp-shade {
+  width: 140px;
+  height: 90px;
+  background: linear-gradient(to bottom, #555, #222);
+  border-radius: 0 0 70px 70px;
+}
+
+.bulb {
+  position: absolute;
+  top: 55px;
+  width: 30px;
+  height: 20px;
+  background: radial-gradient(circle, #ffd27d, #ffb400);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.lamp-pole {
+  width: 10px;
+  height: 120px;
+  background: linear-gradient(to bottom, #666, #222);
+}
+
+.lamp-base {
+  width: 90px;
+  height: 18px;
+  background: linear-gradient(to bottom, #333, #111);
+  border-radius: 50%;
+}
+
+/* ================= LIGHT ================= */
+.light-cone {
+  position: absolute;
+  top: 160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 520px;
+  background: radial-gradient(
+    ellipse at top,
+    rgba(255, 240, 200, 0.75),
+    rgba(255, 200, 140, 0.3),
+    rgba(0, 0, 0, 0)
+  );
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  filter: blur(14px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+/* ================= FORM ================= */
+.form-container {
+  opacity: 0.06;
+  filter: blur(6px);
+  transition: all 1s ease;
+}
+
+.lit .form-container {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* ================= HORROR ================= */
+.shake {
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-6px);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+
+  75% {
+    transform: translateX(-4px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* ================= DUST ================= */
+.dust {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(420px);
+  }
+}
+
+/* ================= CONFETTI ================= */
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 14px;
+  animation: shoot 2.8s ease-out forwards;
+}
+
+@keyframes shoot {
+  to {
+    transform: translate(var(--x), var(--y)) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* ================= SWITCH ================= */
+.switch {
+  width: 54px;
+  height: 28px;
+  background: linear-gradient(to bottom, #333, #111);
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.4s;
+  box-shadow: inset 0 0 6px #000;
+}
+
+.switch .knob {
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle, #ddd, #999);
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.switch.on {
+  background: linear-gradient(to bottom, #ffcc66, #cc8800);
+}
+
+.switch.on .knob {
+  left: 28px;
+  background: radial-gradient(circle, #fff2c6, #ffcc66);
+}

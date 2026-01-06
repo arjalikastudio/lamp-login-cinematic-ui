@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lamp Login Cinematic Final</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen flex flex-col items-center text-white relative">
+
+    <!-- SWITCH -->
+    <div class="mt-6 flex flex-col items-center gap-2 z-50">
+        <div id="powerSwitch" class="switch off">
+            <div class="knob"></div>
+        </div>
+        <span class="text-xs text-white/60">Power</span>
+
+        <!-- SLIDER -->
+        <input id="lampSwitch" type="range" min="0" max="100" value="0"
+            class="w-52 accent-yellow-400 opacity-40 pointer-events-none">
+    </div>
+
+    <!-- LAMP -->
+    <div class="relative mt-10 flex flex-col items-center z-40">
+        <div class="relative flex flex-col items-center">
+            <div class="lamp-shade"></div>
+            <div id="bulb" class="bulb"></div>
+        </div>
+        <div class="lamp-pole"></div>
+        <div class="lamp-base"></div>
+    </div>
+
+    <div id="lightCone" class="light-cone"></div>
+
+    <!-- FORM -->
+    <div id="room" class="form-container mt-32 z-10">
+        <div class="bg-black/40 backdrop-blur-xl border border-white/10 p-8 rounded-2xl w-80 shadow-2xl">
+            <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
+            <input id="username" type="text" placeholder="Username"
+                class="w-full mb-4 px-4 py-2 rounded bg-black/50 border border-white/20">
+            <input id="password" type="password" placeholder="Password"
+                class="w-full mb-6 px-4 py-2 rounded bg-black/50 border border-white/20">
+            <button id="loginBtn" class="w-full py-2 rounded bg-yellow-400 text-black font-semibold">
+                LOGIN
+            </button>
+        </div>
+    </div>
+
+   
+    <script src="script.js"></script>
+</body>
+
+</html>
